@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/domain/entities/message.dart';
 
 class HerMessageBuddle extends StatelessWidget {
-  const HerMessageBuddle({super.key});
+  final Message message;
+
+  const HerMessageBuddle({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +16,10 @@ class HerMessageBuddle extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               color: colors.secondary, borderRadius: BorderRadius.circular(20)),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              'En Radio La Vaca escucharás todas aquellas canciones que la FM actual olvidó. Siempre con el sonido impecable que nos identifica. Tenemos lo que quieres.',
+              message.text,
               style: TextStyle(color: Colors.white),
             ),
           ),
@@ -24,13 +27,21 @@ class HerMessageBuddle extends StatelessWidget {
         const SizedBox(
           height: 5,
         ),
-        _ImageBubble(),
+        _ImageBubble(message.imageUrl!),
+        const SizedBox(
+          height: 10,
+        ),
       ],
     );
   }
 }
 
 class _ImageBubble extends StatelessWidget {
+
+  final String imageUrl;
+
+  const _ImageBubble( this.imageUrl);
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -38,7 +49,7 @@ class _ImageBubble extends StatelessWidget {
     return ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.network(
-          'https://yesno.wtf/assets/yes/4-c53643ecec77153eefb461e053fb4947.gif',
+          imageUrl,
           width: size.width * 0.7,
           height: 150,
           fit: BoxFit.cover,

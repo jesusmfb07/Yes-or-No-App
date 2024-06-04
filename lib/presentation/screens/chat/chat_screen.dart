@@ -17,7 +17,7 @@ class ChatScreen extends StatelessWidget {
         leading: const Padding(
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
-            backgroundImage: const NetworkImage('lib/image.png'),
+            backgroundImage: AssetImage('lib/image.png'),
           ),
         ),
         title: const Text('Mi amor '),
@@ -29,6 +29,13 @@ class ChatScreen extends StatelessWidget {
 }
 
 class _ChatView extends StatelessWidget {
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     final chatProvider = context.watch<ChatProvider>();
@@ -44,11 +51,10 @@ class _ChatView extends StatelessWidget {
                     itemCount: chatProvider.messageList.length,
                     itemBuilder: (context, index) {
                       final message = chatProvider.messageList[index];
+
                       return (message.fromWho == FromWho.hers)
-                          ? const HerMessageBuddle()
-                          : MyMessageBuddle(
-                              message: message,
-                            );
+                          ? HerMessageBuddle(message: message)
+                          : MyMessageBuddle( message: message);
                     })),
 
             ///caja de texto
