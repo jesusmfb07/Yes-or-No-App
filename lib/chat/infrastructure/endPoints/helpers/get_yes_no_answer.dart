@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
-import 'package:flutter_application_1/domain/entities/message.dart';
-import 'package:flutter_application_1/infrastructure/models/yes_no_model.dart';
+import 'package:flutter_application_1/chat/domain/entities/message.dart';
+import 'package:flutter_application_1/chat/infrastructure/adapters/yes_no_model.dart';
 
 class GetYesNoAnswer {
   

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_application_1/domain/entities/message.dart';
+import 'package:flutter_application_1/chat/domain/entities/message.dart';
 
 class MyMessageBuddle extends StatelessWidget {
   final Message message;

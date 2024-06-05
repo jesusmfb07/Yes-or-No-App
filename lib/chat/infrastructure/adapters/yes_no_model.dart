@@ -1,11 +1,9 @@
-// To parse this JSON data, do
-//
-//     final yesNoModel = yesNoModelFromJson(jsonString);
+import 'package:flutter_application_1/chat/application/ports/yes_no_model_to_message_port.dart';
+import 'package:flutter_application_1/chat/domain/entities/message.dart';
 
 
-import 'package:flutter_application_1/domain/entities/message.dart';
 
-class YesNoModel {
+class YesNoModel implements YesNoModelToMessagePort {
     String answer;
     bool forced;
     String image;
@@ -28,6 +26,7 @@ class YesNoModel {
         "image": image,
     };
 
+    @override
     Message toMessageEntity() => Message(
         text: answer == 'yes' ? 'Si' : 'No', 
         fromWho: FromWho.hers,
@@ -35,4 +34,3 @@ class YesNoModel {
     );
     
 }
-

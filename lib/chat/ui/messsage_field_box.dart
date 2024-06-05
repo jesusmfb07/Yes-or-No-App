@@ -14,7 +14,7 @@ class MesssageFieldBox extends StatelessWidget {
         borderRadius: BorderRadius.circular(40));
 
     final inputDecoration = InputDecoration(
-      hintText: 'End your message with a "??"',
+      hintText: 'escribe algo que tenga interrogacion ctv "??"',
       enabledBorder: outlineInputBorder,
       focusedBorder: outlineInputBorder,
       filled: true,

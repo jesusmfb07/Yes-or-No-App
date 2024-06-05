@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/config/helpers/get_yes_no_answer.dart';
-import 'package:flutter_application_1/domain/entities/message.dart';
+import 'package:flutter_application_1/chat/infrastructure/endPoints/helpers/get_yes_no_answer.dart';
+import 'package:flutter_application_1/chat/domain/entities/message.dart';
 
 class ChatProvider extends ChangeNotifier {
   final chatScrollController = ScrollController();

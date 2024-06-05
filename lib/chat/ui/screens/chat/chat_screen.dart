@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/domain/entities/message.dart';
+import 'package:flutter_application_1/chat/domain/entities/message.dart';
 import 'package:provider/provider.dart';
 
-import 'package:flutter_application_1/presentation/providers/chat_provider.dart';
-import 'package:flutter_application_1/presentation/widgets/chat/her_message_buddle.dart';
-import 'package:flutter_application_1/presentation/widgets/chat/my_message_buddle.dart';
-import 'package:flutter_application_1/presentation/widgets/chat/shared/messsage_field_box.dart';
+import 'package:flutter_application_1/chat/application/useCase/chat_provider.dart';
+import 'package:flutter_application_1/chat/ui/her_message_buddle.dart';
+import 'package:flutter_application_1/chat/ui/my_message_buddle.dart';
+import 'package:flutter_application_1/chat/ui/messsage_field_box.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -17,7 +17,7 @@ class ChatScreen extends StatelessWidget {
         leading: const Padding(
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
-            backgroundImage: AssetImage('lib/image.png'),
+            backgroundImage: AssetImage('lib/assets/images/image.png'),
           ),
         ),
         title: const Text('Mi amor '),
@@ -29,12 +29,6 @@ class ChatScreen extends StatelessWidget {
 }
 
 class _ChatView extends StatelessWidget {
-
-
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
